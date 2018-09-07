@@ -1,0 +1,143 @@
+@import "fonts.sass"
+@import "libs.sass"
+@import "media.sass"
+
+
+
+*
+	box-sizing: border-box
+
+@mixin dfnw
+	display: flex
+	flex-flow: row nowrap
+
+body
+	font: 400 14px/1 Roboto
+	color: #fff
+
+h2
+	font-size: 32px
+	font-weight: 500
+	line-height: 60px
+
+h4
+	font-size: 22px
+	font-weight: 700
+	margin-bottom: 150px
+	text-align: center
+
+.cnt
+	max-width: 980px
+	margin: 0 auto
+
+.curr
+	padding: 70px 0 144px
+	background: url('../img/bg.jpg') no-repeat center/cover #0f1e27
+
+.heading
+	@include dfnw
+	margin-bottom: 50px
+	position: relative
+	padding-left: 130px
+	&:before
+		content: ''
+		display: block
+		height: 100%
+		width: 100%
+		opacity: 0.1
+		position: absolute
+		border: 1px solid #92e8fe
+		border-radius: 10px
+		top: 0
+		left: 0
+	h2
+		margin-right: 136px
+
+.select
+	width: 297px
+	font-size: 16px
+	font-weight: 300
+	text-transform: uppercase
+
+.cards
+	@include dfnw
+	justify-content: space-between
+	&__item
+		max-width: 308px
+		width: 100%
+		border-radius: 10px
+		padding: 20px 30px 20px 30px
+		position: relative
+	&-eth
+		background: #2d4934
+	&-ltc
+		background: #353535
+	&-btc
+		background: #301103
+	&-list
+		&__item
+			@include dfnw
+			justify-content: space-between
+			&:not(:last-child)
+				margin-bottom: 8px
+			&:nth-child(1)
+				margin-bottom: 15px
+			&:nth-child(2)
+				margin-bottom: 10px
+
+.price
+	font-size: 20px
+	font-weight: 700
+
+.checkbox
+	position: relative
+	&__text
+		position: relative
+		padding: 0 0 0 60px
+		cursor: pointer
+		&:before
+			content: ''
+			position: absolute
+			top: -4px
+			left: 0
+			width: 50px
+			height: 26px
+			border-radius: 13px
+			background: #CDD1DA
+			box-shadow: inset 0 2px 3px rgba(0,0,0,.2)
+			transition: .2s
+		&:after
+			content: ''
+			position: absolute
+			top: -2px
+			left: 26px
+			width: 22px
+			height: 22px
+			border-radius: 10px
+			background: #FFF
+			box-shadow: 0 2px 5px rgba(0,0,0,.3)
+			transition: .2s
+	input
+		position: absolute
+		z-index: -1
+		opacity: 0
+		margin: 10px 0 0 20px
+		&:checked + .checkbox__text:before
+  		background: #9FD468
+		&:checked + .checkbox__text:after
+  		left: 0
+
+.current-price
+	font-size: 21px
+	font-weight: 700
+
+.percent
+	font-weight: 700
+
+.info
+	opacity: 0.2
+	font-weight: 700
+	&-value
+		color: #70c446
+		font-size: 16px
+		font-weight: 700
